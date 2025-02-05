@@ -29,7 +29,7 @@ describe('getFilteredEvents', () => {
     },
     {
       id: '2',
-      title: 'EVENT MEETING',
+      title: 'MEETING',
       date: '2024-07-30',
       startTime: '10:00',
       endTime: '11:00',
