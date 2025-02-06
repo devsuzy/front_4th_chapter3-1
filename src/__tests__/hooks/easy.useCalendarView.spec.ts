@@ -40,9 +40,9 @@ describe('초기 상태', () => {
   // useFakeTimers, setSytemTime: 모의 타이머를 설정하여 사용자가 시스템 시간 변경을 시뮬레이션한다.
   // useRealTimers: 모의 타이머를 활성화한다.
   it('currentDate는 오늘 날짜인 "2024-10-01"이어야 한다', () => {
-    const date = new Date('2024-10-01');
-    vi.useFakeTimers();
-    vi.setSystemTime(date);
+    // const date = new Date('2024-10-01');
+    // vi.useFakeTimers();
+    // vi.setSystemTime(date);
 
     const { result } = renderHook(() => useCalendarView());
     expect(result.current.currentDate.toISOString().slice(0, 10)).toBe('2024-10-01');
