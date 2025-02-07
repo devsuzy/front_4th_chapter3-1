@@ -2,9 +2,9 @@ import { act, renderHook } from '@testing-library/react';
 
 import { useNotifications } from '../../hooks/useNotifications.ts';
 import { Event } from '../../types.ts';
-import { formatDate } from '../../utils/dateUtils.ts';
+// import { formatDate } from '../../utils/dateUtils.ts';
 import { createNotificationMessage } from '../../utils/notificationUtils.ts';
-import { parseHM } from '../utils.ts';
+// import { parseHM } from '../utils.ts';
 
 const events: Event[] = [
   {
