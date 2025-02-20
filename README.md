@@ -46,7 +46,7 @@
 #### 질문
 
 > Q. medium.useEventOperations.spec.tsx > 아래 toastFn과 mock과 이 fn은 무엇을 해줄까요?
-```
+```javascript
 const toastFn = vi.fn();
 
 vi.mock('@chakra-ui/react', async () => {
@@ -64,7 +64,7 @@ vi.mock('@chakra-ui/react', async () => {
 - `toastFn`으로 라이브러리 모듈의 `useToast` 기능을 구현하며 테스트 해볼 수 있습니다.
 
 > Q. medium.integration.spec.tsx > 여기서 ChakraProvider로 묶어주는 동작은 의미있을까요? 있다면 어떤 의미일까요?
-```
+```typescript
 const setup = (element: ReactElement) => {
   const user = userEvent.setup();
 
@@ -76,7 +76,7 @@ const setup = (element: ReactElement) => {
 - Chakra UI의 `useToast`, `extendTheme` 등의 기능을 사용하기 위한 필수 설정입니다.
 
 > Q. handlersUtils > 아래 여러가지 use 함수는 어떤 역할을 할까요? 어떻게 사용될 수 있을까요?
-```
+```typescript
 export const setupMockHandlerCreation = (initEvents = [] as Event[]) => {
   const mockEvents: Event[] = [...initEvents];
 
@@ -99,7 +99,7 @@ export const setupMockHandlerCreation = (initEvents = [] as Event[]) => {
 - `use` 메소드를 사용하여 특정 테스트에서만 필요한 API 응답을 변경해줄 수 있습니다.
 
 > Q. setupTests.ts > 왜 이 시간을 설정해주는 걸까요?
-```
+```javascript
 beforeEach(() => {
   expect.hasAssertions();
 
@@ -139,7 +139,7 @@ beforeEach(() => {
 
 > 🐙 테스트 코드 작성 시 가장 많이 사용한 테스팅 라이브러리 API
 
-```
+```javascript
 import {render, screen} from '@testing-library/react'
 
 test('should show login form', () => {
@@ -182,7 +182,7 @@ test('should show login form', () => {
 - msw를 사용하여 이벤트 관련 API를 처리하는 `setupMockHandler~` 함수들이 미리 제공되어 있었습니다.
 - 위 함수들을 통해 mock 이벤트 데이터를 생성/수정/삭제하여 백엔드 없이 테스트 코드에서 이벤트 API를 모킹할 수 있습니다.
 
-```
+```typescript
 export const setupMockHandlerCreation = (initEvents = [] as Event[]) => {
   const mockEvents: Event[] = [...initEvents];
 
@@ -203,7 +203,7 @@ export const setupMockHandlerCreation = (initEvents = [] as Event[]) => {
 - `setup` 유틸 함수를 사용하여 `App` 컴포넌트를 렌더링하고,
 - `saveSchedule` 유틸 함수를 사용하여 일정을 저장합니다.
 
-```
+```typescript
 const setup = (element: ReactElement) => {
   const user = userEvent.setup();
 
@@ -235,7 +235,7 @@ const saveSchedule = async (
 - `event-list`라는 test용 id를 찾아 화면에 잘 뜨는지 확인합니다.
 - 테스트가 정상 작동하는지 실행합니다.
 
-```
+```javascript
 describe('일정 CRUD 및 기본 기능', () => {
   it('입력한 새로운 일정 정보에 맞춰 모든 필드가 이벤트 리스트에 정확히 저장된다.', async () => {
     setupMockHandlerCreation();
